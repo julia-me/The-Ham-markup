@@ -1,0 +1,249 @@
+body {
+    font: 400 13px/1.5 $font-base;
+}
+
+button {
+    cursor: pointer;
+}
+
+// Burger
+
+.burger {
+    position: relative;
+    display: inline-block;
+    width: 21px;
+    height: 15px;
+    margin-left: 18px;
+    background: transparent;
+    border: 0;
+    outline: none;
+  
+    @include screen(lg) {
+      display: none;
+    }
+  
+    span,
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: $color-text-main;
+    }
+  
+    span {
+      top: 6px;
+    }
+    
+    &::before,
+    &::after {
+      content: '';
+      top: 0;
+    }
+  
+    &::after {
+      top: 12px;
+    }
+}
+
+// Main buttons
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    // justify-content: space-between;
+
+}
+.button__item {
+    position: relative;
+    display: inline-block;
+    max-width: 165px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding: 15px 0;
+    font-weight: bold;
+    font-size: 11px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: 0.6s;
+
+    @include screen (md) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 13px;
+    }
+    @include screen (ld) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+    }
+
+    &:nth-child(2){
+        margin-left: 15px;
+
+        @include screen (md) {
+            margin-left: 30px;
+        }
+    }
+
+    &-primary {
+        background: $color-green;
+
+        &:hover {
+            background: lighten($color-green, 30%);
+            color: darken($color-green, 30%);
+        }
+    }
+
+    &-secondary {
+        background: #00cbf6;
+
+        &:hover {
+            background: lighten(#00cbf6, 30%);
+            color: darken(#00cbf6, 30%);
+        }
+    }
+
+    &-hover {
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #fff;
+            border-radius: 5px 5px 0 0;
+        }
+    }
+}
+
+// Main titles
+
+.title {
+    position: relative;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    font-size: 26px;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+
+    &__black {
+        color: #4e4e4e;   
+    }
+
+    &__white {
+        color: #fff;        
+    }
+
+    @include screen (md) {
+        margin-bottom: 50px;
+        padding-bottom: 25px;
+        font-size: 30px;
+    }
+    @include screen (lg) {
+        margin-bottom: 75px;
+        padding-bottom: 35px;
+        font-size: 36px;
+        
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: calc(50% - 10px);
+        width: 77px;
+        height: 1px;
+        background: $color-green;
+        transform: translateX(-50%);
+    }
+
+    &::after {
+        top: calc(100% + 4px);
+        left: calc(50% + 10px);
+        // right: 40%;
+    }
+}
+
+// Paddings for every section
+
+.section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    outline: none;
+
+    @include screen (md) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @include screen (lg) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+// List with icons
+
+.style-list {
+    &-item {
+        position: relative;
+        padding: 5px 0 5px 20px;
+
+        @include screen (lg) {
+            padding: 10px 0 10px 40px;
+        }
+
+
+        &::after{
+            content: '';
+            position: absolute; 
+            left: 0;
+            top:50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: url(../img/about-icon-checked.png) center/cover no-repeat;
+
+            @include screen (lg) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+      }
+}
+
+// modal window {
+
+    .purchase-modal,
+    .benefits-modal {
+        border: 0;
+        outline: none;
+    }
+
+.swal2-confirm.swal2-styled {
+    background: $color-green;
+}
+
+.swal2-footer {
+    color: #294453;
+
+    a { 
+      &:hover {
+         border-bottom: 1px solid #294453;
+       }
+    }
+}
+
+

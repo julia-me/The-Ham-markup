@@ -1,0 +1,116 @@
+.home {
+    height: 100vh;
+    padding: 100px 20px 60px;
+    background: rgba(0,0,0,0.5) url(../img/bg-home.jpg) center/cover no-repeat;
+    background-blend-mode: overlay;
+
+    @include screen(md) {
+        padding: 140px 10px 80px;     
+    }
+    @include screen(lg) {
+        padding: 150px 0 100px;     
+    }
+    @include screen(xl) {
+        padding: 200px 0 170px;     
+    }
+
+    @include screen(1900px) {
+        padding: 340px 0 240px;     
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .button__item {
+        width: calc(50% - 15px);
+    }
+
+    &__inner {
+        padding: 0 0 40px;
+        font-weight: 300;
+        font-size: 20px;
+        color: #d4d4d4;
+        text-align: center;
+
+        @include screen(md) {
+            font-size: 24px;
+            padding-bottom: 80px;    
+        }
+        @include screen(lg) {
+            font-size: 30px;
+            padding-bottom: 70px;   
+        }
+        @include screen(xl) {
+            font-size: 34px;
+            padding-bottom: 100px;   
+        }
+
+        &-text {
+            font-size: 22px;
+            color: #fff;
+            text-transform: uppercase;
+
+            @include screen(md) {
+                font-size: 28px;    
+            }
+            @include screen(lg) {
+                font-size: 35px;   
+            }
+
+            &-collored {
+                color: $color-green;
+            }
+        }
+
+        &-title {
+            font-size: 40px;
+            color: #fff;
+            text-transform: uppercase;
+
+            @include screen(md) {
+                font-size: 55px;    
+            }
+            @include screen(xl) {
+                font-size: 79px;   
+            }
+        }
+    }
+
+    &__slider{
+        width: 170px;
+        margin: 0 auto;
+        padding-top: 40px;
+        padding-bottom: 20px;
+
+        // @include screen (lg){
+        //     padding-top: 60px;  
+        // }
+
+        @include screen (md){
+            position: absolute;
+            left: 55%;
+            top: 100%;
+            transform: translate(100%, -25%);
+            padding-top: 0;
+        }
+
+        @include screen (lg){
+            left: 65%;
+            transform: translate(100%, -100%);
+        }
+
+        @include screen (1900px){
+            right: 0;
+            bottom: unset;
+            left: unset;
+            transform: translate(100%, -50%);
+        }
+
+        // &-item {
+        //     @include screen (2000px) {
+        //         opacity: 0.8;
+        //     }
+        // }
+    }
+}

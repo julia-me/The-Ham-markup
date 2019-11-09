@@ -1,0 +1,41 @@
+.purchase {
+    background: url(../img/bg-purchase.jpg) center/cover no-repeat;
+    text-align: center;
+
+    .section {
+        @include screen (lg) {
+            padding-top: 125px;
+            padding-bottom: 125px;
+        }   
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        color: $color-green;
+        font-size: 22px;
+
+        @include screen (md) {
+            font-size: 29px;
+            margin-bottom: 20px;
+        }
+        @include screen (lg) {
+            font-size: 40px;
+            margin-bottom: 35px;
+        }
+    }
+
+    &__text {
+        color: #d8d8d8;
+        margin-bottom: 30px;
+
+        @include screen (md) {
+            margin-bottom: 50px;
+        }
+        @include screen (lg) {
+            margin-bottom: 75px;
+            font-size: 16px;
+        }
+    }
+}
+

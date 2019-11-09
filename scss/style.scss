@@ -1,0 +1,30 @@
+@import "helpers/_mixins.scss";
+@import "helpers/_vars.scss";
+
+@import "animate/animate";
+
+@import "base/sweetalert2";
+
+@import "base/_bases.scss";
+@import "base/_bootstrap-grid.scss";
+@import "base/_fonts.scss";
+@import "base/_normalize.scss";
+@import "base/slick-theme";
+@import "base/slick";
+
+@import "partials/_header.scss";
+@import "partials/_footer.scss";
+@import "partials/home";
+@import "partials/options";
+@import "partials/about";
+@import "partials/features";
+@import "partials/work";
+@import "partials/service";
+@import "partials/purchase";
+@import "partials/news";
+@import "partials/facts";
+@import "partials/pricing";
+@import "partials/testimonial";
+@import "partials/team";
+@import "partials/benefits";
+@import "partials/contacts";

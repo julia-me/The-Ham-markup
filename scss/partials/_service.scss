@@ -1,0 +1,137 @@
+.service {
+    .tabs {
+
+        @include screen (md){
+            position: relative;
+            padding: 0;
+        }
+
+        .tabset {
+            width:100%;
+            border: 1px solid #eeeeef;
+    
+            @include screen (sm) {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 25px;
+            }
+    
+            &__item {
+                background: #f8fcfe;
+                transition: 0.4s;
+    
+                &:not(:last-child) {
+                border-bottom: 1px solid #eeeeef;
+                }
+                @include screen (sm) {
+                    &:not(:last-child) {
+                        border-bottom: 0;
+                        border-right: 1px solid #eeeeef;
+                        }
+                }
+    
+                 @include screen (md) {
+                    width: 16.66666%;
+                }
+    
+                &-opener {
+                    display:block;
+                    color:#717171;
+                    height:100%;
+                    text-transform: capitalize;
+                    line-height:30px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    text-align: center;
+                    transition: 0.4s;
+    
+                    @include screen (md) {
+                        font-size: 12px;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                    }
+    
+                    @include screen (xl) {
+                        font-size: 16px;
+                        padding-top: 25px;
+                        padding-bottom: 25px;
+                    }
+                }
+    
+                &-slide {
+                    padding: 20px 10px;
+                    width: 100%;
+                    font-weight: 300;
+                    color: #777;
+                    line-height: 1.8;
+                    background: #fff;
+                    text-align: justify;
+                    outline: none;
+    
+                    @include screen (md) {
+                        padding: 0;
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+    
+                    &-content {
+                        @include screen (md) {
+                        display: flex;
+                    }
+    
+                        &:not(:first-child) {
+                            margin-top: 30px;
+                        }
+                    }
+    
+                    &-img {
+    
+                        width: fit-content;
+                        margin: 10px auto;
+    
+                        @include screen (md) {
+                            margin: 0 20px 0 0;
+                            min-width: 194px;
+                        }
+                    }
+                }
+    
+                .active, &:hover {
+                    background: $color-green;
+    
+                    &.tabset__item-opener, .tabset__item-opener:hover {
+                        position: relative;
+                        color: white;
+    
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: -1px;
+                            left: -1px;
+                            width: calc(100% + 2px);
+                            height: calc(100% + 2px);
+                            border: 1px solid #18cfaa;
+                        }
+
+                        @include screen (sm) {
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top:100%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 12px 12px 0 12px;
+                            border-color: #18cfaa transparent transparent transparent;
+                        }
+                        }
+    
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,134 @@
+.facts{
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 40px 15px;
+
+        @include screen (sm) {
+            width: 50%;  
+
+            &:nth-child(3) {
+                order: 1;
+            }
+        }
+        @include screen (lg) {    
+            width: 25%;       
+            padding: 50px 0 30px;
+
+            &:nth-child(3) {
+                order: 0;
+            }
+        }
+        @include screen (1800px) {         
+            padding: 100px 0 50px;
+        }
+
+        &-dark {
+            background: $dark-bg;
+            border-top: 8px solid $color-green;
+        }
+
+        &-light {
+            background: $color-green;
+            border-top: 8px solid $dark-bg;
+        }
+
+        &-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 70px;
+            height: 70px;
+            margin-bottom: 35px;
+            border-radius: 50%;
+
+            @include screen (sm) {
+                width: 90px;
+                height: 90px;
+                margin-bottom: 45px;
+            }
+
+            @include screen (xl) {
+                width: 110px;
+                height: 110px;
+                margin-bottom: 55px;
+            }
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+
+                @include screen (sm) {
+                    width: 130px;
+                    height: 130px;
+                }
+    
+                @include screen (xl) {
+                width: 170px;
+                height: 170px;
+                }
+
+            }
+
+            &-dark {
+                background: $dark-bg;
+
+                &::before {
+                    border: 1px solid $dark-bg;
+                }
+            }
+            &-light {
+                background: $color-green; 
+
+                &::before {
+                    border: 1px solid $color-green;
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 400;
+        color: #fff;
+
+        @include screen (md) {
+            font-size: 28px;
+        }
+        @include screen (1800px) {
+            font-size: 36px; 
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        text-transform: capitalize;
+        font-weight: 300;
+
+        @include screen (md) {
+            font-size: 16px;
+        }
+        @include screen (1800px) {
+            font-size: 18px; 
+        }
+
+        &-dark{
+        color: $color-green;
+        }
+
+        &-light {
+            color: $dark-bg;
+        }
+    }
+}

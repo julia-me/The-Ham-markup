@@ -1,0 +1,88 @@
+.contacts {
+    position: relative;
+
+    @include screen (lg) { 
+        .title {
+            display: inline-block;
+            text-align: left; 
+        }
+    }
+
+    &__form {
+        width: 100%;
+        margin-bottom: 30px;
+
+        @include screen (md) {
+            margin-bottom: 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            max-width: 555px;
+            margin-bottom: 10px;
+            padding: 15px 10px;
+            background: transparent;
+            font: 300 12px/1.5 $font-base;
+            color: #90aebd;
+            border: 1px solid #dbe5e3;
+            outline: none;
+            resize: none;
+
+            @include screen (md) {
+                margin-bottom: 15px;
+                padding: 20px 15px;
+                font-size: 14px;
+            }
+
+            &::placeholder{
+                font: 300 12px/1.5 $font-base;
+                color: #90aebd;
+
+                @include screen (md) {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        input[type="text"]:focus, 
+        input[type="email"]:focus,
+        textarea:focus {
+            box-shadow: 0 0 3px rgba(24, 207, 171, .6);
+            border: 1px solid rgba(24, 207, 171, .8);
+
+            &::placeholder {
+                opacity: 0;
+            }
+          }
+
+        .button__item {
+            max-width: 100%;
+            border: 0;
+        }
+    }
+
+    &__map {
+        @include screen (md) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(25%);
+            width: 50%;
+            height: 70%;
+        }
+
+        &-item {
+            max-width: 100%;
+            max-height: 100%;
+
+            @include screen (sm) {
+            height: 50%;
+            }
+            @include screen (md) {
+                height: 100%;
+            }
+        }
+    }
+}

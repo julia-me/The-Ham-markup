@@ -1,0 +1,312 @@
+.footer {
+    &__body {
+        padding: 40px 0 10px;
+        background: #1d2c33;
+
+        @include screen (md) {
+            padding: 50px 0;
+        }
+    
+        @include screen (xl) {
+            padding: 125px 0;
+        }
+        &-item {
+            margin-bottom: 30px;
+            font-weight: 300;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #b2b2b2;
+
+            @include screen (lg) {
+                font-size: 14px;
+                line-height: 1.85;
+                margin-bottom: 0;
+            }
+
+            &-logo {
+                font-size: 20px;
+                margin-bottom: 15px;
+                line-height: 1.15;
+                color: #fff;
+
+                @include screen (lg) {
+                    font-size: 40px;
+                    margin-bottom: 30px;
+                }
+
+                strong {
+                    color: $color-green;
+                }
+            }
+
+            &-contacts {
+                padding-top: 20px;
+
+                @include screen (lg) {
+                    padding-top: 70px;
+                }
+
+                p {
+                    display: flex;
+                    align-items: flex-end;
+                }
+
+                span{
+                    font-weight: 400;
+                    font-size: 13px;
+                    padding-right: 5px;
+
+                    @include screen (lg) {
+                        font-size: 16px;
+                    }
+                }
+
+                a {
+                    display: block;
+                    cursor: pointer;
+                    transition: .5s;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                address {
+                    font-style: normal;
+                    margin-bottom: 15px;
+
+                    @include screen (lg) {
+                        margin-bottom: 30px;  
+                    }
+
+                }
+
+            }
+
+            &-post {
+                position: relative;
+                display: flex;
+
+                &:hover {
+                  .footer__body-item-post-text-title {
+                      color: $color-green;
+                  }  
+                }
+
+                &:not(:last-child) {
+                    padding-bottom: 40px;
+
+                    @include screen (lg) {
+                    padding-bottom: 60px;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 20px;
+                        left: 0;
+                        width: 90%;
+                        height: 1px;
+                        background: #294453;
+
+                        @include screen (lg) {
+                            bottom: 30px;
+                        }
+                    }
+                }
+
+                &-img {
+                    min-width: 77px;
+                }
+
+                &-text {
+                    margin-left: 15px;
+
+                  &-title {
+                      font-size: 13px;
+                      color: #fff;
+                      text-transform: uppercase;
+                      transition: .5s;
+
+                      @include screen (lg){
+                            font-size: 16px;
+                      }
+                  }
+                  span {
+                      font-weight: 300;
+                      color: #f1f1f1;
+                      margin-top: 10px;
+                  }
+                }
+            }
+
+            &-title {
+                margin-bottom: 25px;
+                color: #fff;
+                font-size: 14px;
+                text-transform: uppercase;
+
+                @include screen (lg) {
+                    margin-bottom: 50px;
+                    font-size: 18px;
+                }
+            }
+
+            &-tags {
+                padding-bottom: 12px;
+                position: relative;
+
+                @include screen (lg) {
+                    padding-bottom: 35px;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 90%;
+                    height: 1px;
+                    background: #294453;
+                }
+
+                .tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    @include screen (sm) {
+                        justify-content: left;
+                    }
+                }
+
+                &-item {
+                    display: inline-block;
+                    margin-bottom: 8px;
+                    margin-right: 8px;
+
+                    a {
+                        display: block;
+                        background-color: transparent;
+                        border: 1px solid #d7d7d7;
+                        // margin-bottom: 5px;
+                        padding: 5px 10px;
+                        transition: 0.3s;
+
+                        &:hover {
+                            background: $color-green;
+                            border: 1px solid $color-green;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            &-newsletter {
+                padding-top: 20px;
+
+                @include screen (lg) {
+                    padding-top: 35px;
+                }
+
+                &-title {
+                    margin-bottom: 25px;
+                    color: #fff;
+                    font-size: 14px;
+                    text-transform: uppercase;
+
+                    @include screen (lg) {
+                        margin-bottom: 40px;
+                        font-size: 18px;
+                    }
+                }
+
+                &-form {
+                    display: flex;
+                    margin-top: 20px;
+                }
+
+                &-email {
+                    max-width: 192px;
+                    padding: 10px;
+                    background: #22353f;
+                    border: 0;
+                    color: #757575;
+                    font: 300 14px/1.85 $font-base;
+                    font-weight: 300;
+                    font-size: 12px;
+                    outline: none;
+
+                    @include screen (lg) {
+                        padding: 15px 12px;
+                        font-size: 14px;
+                    }
+
+                    &::placeholder {
+                        font: 300 14px/1.85 $font-base;
+                        color: #757575;
+                    }
+
+                    &:focus {
+                        background: lighten(#22353f, 5%); 
+
+                    }
+                }
+                &-submit {
+                    border: 0;
+                    background: #294453;
+                    color: $color-green;
+                    padding: 10px;
+                    font: 900 12px/1.85 $font-base;
+                    cursor: pointer;
+
+                    &:hover, &:focus {
+                        background: lighten( #294453, 20%);  
+                    }
+
+                    @include screen (lg) {
+                        padding: 15px;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &-flicke {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                img {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+    }
+
+    &__copyright {
+        text-transform: capitalize;
+        padding: 25px 0;
+        text-align: center;
+        background: #23353f;
+
+        @include screen (md) {
+            padding: 45px 0;
+        }
+
+        &-text{
+            font-weight: 300;
+            color: #aeaeae;
+            font-size: 12px;
+
+            @include screen (md) {
+                font-size: 14px;
+            }
+
+            span {
+                text-transform: none;
+                color: $color-green;
+            }
+        }
+    }
+}

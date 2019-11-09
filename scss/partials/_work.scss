@@ -1,0 +1,201 @@
+.work {
+    background: #f8fcfe;
+
+    &__list {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        text-align: center;
+        max-width: 200px;
+        margin: 40px auto 30px;
+        padding: 0;
+        border: 1px solid #ebebeb;
+        text-transform: capitalize;
+        font-size: 12px;
+        color: #717171;
+
+        @include screen (sm) {
+            flex-flow: row;
+            max-width: fit-content;
+            margin-top: 70px;
+            margin-bottom: 70px;
+            font-size: 14px;
+        }
+
+        &-item {
+            position: relative;
+            padding: 5px 10px;
+            background: #fff;
+            border: 0;
+            text-transform: capitalize;
+            outline: none;
+            transition: 0.4s;
+
+            @include screen (sm) {
+                padding: 20px 25px;    
+            }
+
+            &:hover,
+            &.is-checked {
+                color: $color-green;
+            }
+
+            &.is-checked::after {
+                content: '';
+                position: absolute;
+                top: -3px;
+                left: -1px;
+                height: 3px;
+                width: calc(100% + 2px);
+                background: $color-green;
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #ebebeb;
+
+                @include screen (sm) {
+                    border-right: 1px solid #ebebeb;
+                    border-bottom: 0;
+                }
+            }
+
+        }
+    }
+
+    &__item {
+        @include screen (sm) {
+            padding: 0;
+        }
+
+        &-img {
+            position: relative;
+
+            img {
+                width: 100%;
+            }
+
+            &:hover {
+                .work__item-hover {
+                  opacity: 1;
+
+                  &::after {
+                      content: '';
+                      position: absolute;
+                      top:0;
+                      left: 0;
+                      height: 3px;
+                      width: 100%;
+                      background: $color-green;
+                  }
+                }
+              }
+        }
+
+        &-hover{
+            opacity: 0;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f8fcfe;
+            text-align: center;
+            transition: 0.5s;
+
+            &-icons {
+                display: flex;
+                justify-content: center;
+
+                a{
+                    display: inline-flex;
+                }
+
+                &-white{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 5px;
+                    border-radius: 50%;
+                    text-align: center;
+                    border: 1px solid $color-green;
+                }
+
+                &-green {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    text-align: center;
+                    border: 1px solid $color-green;
+                    background: $color-green;
+                }
+            }
+
+            &-text {
+                padding-top: 30px;
+                font-size: 12px;
+                font-weight: 300;
+                color: #8a8a8a;
+
+                &-title {
+                    font-weight: bold;
+                    color: $color-green;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        &-btn {
+            display: block;
+            position: relative;
+            width: 200px;
+            margin: 30px auto 0;
+            padding-left: 20px;
+            font-size: 14px;
+            font-family: $font-base;
+            border: 0;
+            outline: none;
+    
+            @include screen (md) {
+                margin-top: 70px;
+            }
+    
+            &::after {
+                content: '+';
+                position: absolute;
+                top: 50%;
+                left: 8%;
+                transform: translateY(-50%);
+                color: #fff;
+                font-size: 40px;
+            }
+    
+            &:hover{
+                background: #a8eee0;
+            }
+        }
+    }
+
+    .visible_item{
+        display:none;
+       }
+}
+
+
+
+
+
+
+
+
+
+
+

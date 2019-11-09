@@ -1,0 +1,121 @@
+.benefits {
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+    background: url(../img/bg-benefits.jpg) center/cover no-repeat;
+
+    &-title {
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: #fff;
+
+        @include screen (lg) {
+            margin-bottom: 70px;
+            font-size: 40px;
+        }
+        @include screen (xl) {
+            margin-bottom: 100px;
+            font-size: 51px;
+        }
+
+        &-text {
+            font-size: 20px;
+            color: $color-green;
+            font-weight: 400;
+
+            @include screen (lg) {
+                font-size: 38px;
+            }
+            @include screen (xl) {
+                font-size: 47px;
+            }
+        }
+    }
+
+    &__inner{
+        padding-bottom: 30px;
+
+        @include screen (md) {
+            width: 50%;
+            padding-bottom: 0;
+            order: 1;
+        }
+
+        &-list {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto 30px;
+            // margin-bottom: 30px;
+            padding-left: 25px;
+            color: #f7f7f7;
+            font-weight: 300;
+
+            @include screen (md) {
+                display: block;
+                margin-right: 0;
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            @include screen (lg) {
+                margin-bottom: 70px;
+            }
+            li {
+                display: inline-block;
+
+                @include screen (md) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .buttons {
+
+        @include screen (md) {
+            justify-content: left;
+        }
+        @include screen (1900px) {
+            margin-bottom: 70px;
+        }
+    }
+
+    &__img{
+        max-width: 80%;
+        margin: 0 auto;
+
+        @include screen (sm) {
+            width: 45%;
+        } 
+        @include screen (md) {
+            width: 50%;
+            margin: 0;
+        }
+
+        // @include screen (md) {
+        //     position: absolute;
+        //     top: 50%;
+        //     left: 0;
+        // } 
+
+        // @include screen (lg) {
+        //     max-width: 75%;
+        //     top: unset;
+        //     bottom: 30px;
+        //     left: 0;
+        // } 
+        // @include screen (1900px) {
+        //     width: 100%;
+        // } 
+    }
+
+    .new-container {
+        @include screen (md) {
+            display: flex;
+        }
+    }
+}
